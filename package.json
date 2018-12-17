@@ -2,18 +2,19 @@
   "name": "quiz-game",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Roth, Stephen <designbystephen@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "jest",
-    "start": "node index.js"
+    "start": "nodemon --exec babel-node ./"
   },
   "dependencies": {
-    "cors": "^2.8.4",
-    "express": "^4.16.3",
-    "lodash": "^4.17.11"
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4"
   },
   "devDependencies": {
-    "jest": "^23.6.0"
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.2.0",
+    "nodemon": "^1.18.9"
   }
 }

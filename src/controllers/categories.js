@@ -3,16 +3,16 @@ import require from '../utils/require';
 export default (app) => {
 
     // get recordset
-    app.get('/games/:gameId/categories/:catId/questions', (req, res, next) => {
-        const { gameId, catId } = req.params;
+    app.get('/games/:gameId/categories', (req, res, next) => {
+        const { gameId } = req.params;
         
-        require(gameId, catId);
+        require(gameId);
 
         res.status(200).json([ {question} ]);
     });
 
     // create new 
-    app.post('/games/:gameId/categories/:catId/questions', (req, res, next) => {
+    app.post('/games/:gameId/categories', (req, res, next) => {
         const { title, answer } = req.body;
 
         require(title, answer);
@@ -21,7 +21,7 @@ export default (app) => {
     });
 
     // get record
-    app.get('/questions/:id', (req, res, next) => {
+    app.get('/categories/:id', (req, res, next) => {
         const { id } = req.params;
         
         require(id);
@@ -30,7 +30,7 @@ export default (app) => {
     });
 
     // edit record
-    app.patch('/questions/:id', (req, res, next) => {
+    app.patch('/categories/:id', (req, res, next) => {
         const { id } = req.params;
         
         require(id);
@@ -39,7 +39,7 @@ export default (app) => {
     });
 
     // delete record
-    app.delete('/questions/:id', (req, res, next) => {
+    app.patch('/categories/:id', (req, res, next) => {
         const { id } = req.params;
         
         require(id);

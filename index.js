@@ -1,19 +1,16 @@
-const express = require('express');
-const cors = require('cors');
-const controllers = require('./controllers');
-const { NotFound } = require('./modules/errors');
+import express from 'express';
+import dotenv from 'dotenv';
+import app from './src/app';
 
-const app = express();
+// load dotenv
+dotenv.config();
 
-app.use(cors());
+// create app
+const webApp = app();
 
-controllers(app);
+const { HOSTNAME, PORT } = process.env;
 
-app.use('*', (req, res) => {
-    const response = new NotFound({});
-    res.status(response.status).json(response.toJson());
-});
-
-app.listen(3000, () =>{
-    console.log('http://localhost:3000');
+// listen for requests
+webApp.listen(PORT, HOSTNAME, () => {
+    console.log(`Now listening on http://${HOSTNAME}:${PORT}`);
 });
