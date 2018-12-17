@@ -1,10 +1,10 @@
 import require from '../utils/require';
-import games from '../models/games';
+import model from '../models/games';
 
 export default (app) => {
     // get recordset
     app.get('/games', async (req, res, next) => {
-        const allGames = await games.getAll();
+        const allGames = await model.getAll();
 
         res.status(200).json(allGames);
     });
@@ -15,7 +15,7 @@ export default (app) => {
         
         require(id);
 
-        const game = await games.get(id);
+        const game = await model.get(id);
 
         res.status(200).json(game);
     });
@@ -30,12 +30,15 @@ export default (app) => {
     });
 
     // edit record
-    app.patch('/games/:id', (req, res, next) => {
+    app.patch('/games/:id', async (req, res, next) => {
         const { id } = req.params;
+        const { ...body } = req.body;
         
         require(id);
 
-        res.status(200).json({});
+        const game = await model.update(id, {...body});
+
+        res.status(200).json(game);
     });
 
     // delete record
