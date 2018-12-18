@@ -8,10 +8,10 @@ export default () => ({
     TableName: "Categories",
     KeySchema: [
         { AttributeName: "id", KeyType: "HASH" },
+        { AttributeName: "name", KeyType: "RANGE" },
     ],
     AttributeDefinitions: [
         { AttributeName: "id", AttributeType: "S" },
-        { AttributeName: "gameId", AttributeType: "S" },
         { AttributeName: "name", AttributeType: "S" },
     ],
     ProvisionedThroughput: {       

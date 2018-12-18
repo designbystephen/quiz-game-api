@@ -5,8 +5,11 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon --exec babel-node ./",
+    "start:db": "docker run -v :/dynamodb_local_db -p 8000:8000 cnadiminti/dynamodb-local:latest",
     "debug": "nodemon --exec babel-node ./ --inspect",
-    "test": "jest"
+    "test": "jest",
+    "create-tables": "babel-node -r dotenv/config src/scripts/create-tables",
+    "load-data": "babel-node -r dotenv/config src/scripts/load-data"
   },
   "dependencies": {
     "aws-sdk": "^2.378.0",

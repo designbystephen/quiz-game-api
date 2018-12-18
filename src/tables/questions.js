@@ -10,13 +10,11 @@ export default () => ({
     TableName: "Questions",
     KeySchema: [
         { AttributeName: "id", KeyType: "HASH" },
+        { AttributeName: "pos", KeyType: "RANGE" },
     ],
     AttributeDefinitions: [
         { AttributeName: "id", AttributeType: "S" },
-        { AttributeName: "categoryId", AttributeType: "S" },
         { AttributeName: "pos", AttributeType: "N" },
-        { AttributeName: "question", AttributeType: "S" },
-        { AttributeName: "answer", AttributeType: "S" },
     ],
     ProvisionedThroughput: {       
         ReadCapacityUnits: 5, 
