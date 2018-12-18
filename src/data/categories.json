@@ -1,1 +1,27 @@
-{}
+[
+    {
+        "id": "1501b34abd31",
+        "gameId": "0d471c75b9be",
+        "name": "Category 1"
+    },
+    {
+        "id": "513b1d1bbfec",
+        "gameId": "0d471c75b9be",
+        "name": "Category 2"
+    },
+    {
+        "id": "5fa3e44c2a2f",
+        "gameId": "0d471c75b9be",
+        "name": "Category 3"
+    },
+    {
+        "id": "8e4e5db7e1c6",
+        "gameId": "0d471c75b9be",
+        "name": "Category 4"
+    },
+    {
+        "id": "d2701e556375",
+        "gameId": "0d471c75b9be",
+        "name": "Category 5"
+    }
+]

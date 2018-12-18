@@ -15,7 +15,7 @@ export default () => ({
     TableName: "Games",
     KeySchema: [
         { AttributeName: "id", KeyType: "HASH" },
-        { AttributeName: "id", KeyType: "RANGE" },
+        { AttributeName: "name", KeyType: "RANGE" },
     ],
     AttributeDefinitions: [
         { AttributeName: "id", AttributeType: "S" },
