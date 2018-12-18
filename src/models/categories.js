@@ -16,7 +16,7 @@ export const getAll = async (id) => ([
     get('1234')
 ]);
 
-export const create = async (id, title) => {
+export const create = async (gameId, title) => {
     // id from object creation in database
     const id = '1234';
 
