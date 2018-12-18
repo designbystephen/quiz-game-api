@@ -1,5 +1,5 @@
 import require from '../utils/require';
-import model from '../models/games';
+import * as model from '../models/games';
 
 export default (app) => {
     // get recordset
@@ -21,12 +21,14 @@ export default (app) => {
     });
 
     // create new record
-    app.post('/games', (req, res, next) => {
-        const { name, description } = req.body;
+    app.post('/games', async (req, res, next) => {
+        const { name } = req.body;
 
-        require(name, description);
+        require(name);
 
-        res.sendStatus(201);
+        const game = await model.create(name);
+
+        res.status(201).json(game);
     });
 
     // edit record
