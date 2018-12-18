@@ -10,3 +10,18 @@
 //         "score": 0
 //     }
 // }
+
+export default () => ({
+    TableName: "Games",
+    KeySchema: [
+        { AttributeName: "id", KeyType: "HASH" },
+    ],
+    AttributeDefinitions: [
+        { AttributeName: "id", AttributeType: "S" },
+        { AttributeName: "name", AttributeType: "S" },
+    ],
+    ProvisionedThroughput: {       
+        ReadCapacityUnits: 5, 
+        WriteCapacityUnits: 5,
+    }
+});

@@ -1,8 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import controllers from './middlewares/controllers';
-import notFound from './middlewares/notFound';
-import errorHandler from './middlewares/errorHandler';
+import notFound from './middlewares/not-found';
+import errorHandler from './middlewares/error-handler';
 
 export default () => {
     const app = express();

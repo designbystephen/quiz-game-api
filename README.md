@@ -4,6 +4,7 @@
 ## Requirements
 - Node.js >= 8.11.3
 - Yarn
+- Docker
 
 ## Getting Started
 ### Clone this repository:
@@ -14,6 +15,10 @@
 
 ### Install dependencies
 - `$ yarn`
+
+### Create .env
+- `$ touch .env`
+- Use example.env for guidance
 
 ## Scripts 
 - __start__ - start local server for development

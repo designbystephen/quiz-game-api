@@ -1,6 +1,6 @@
-import games from './games';
-import categories from './categories';
-import questions from './questions';
+import games from './games.json';
+import categories from './categories.json';
+import questions from './questions.json';
 
 export default [
     games,
