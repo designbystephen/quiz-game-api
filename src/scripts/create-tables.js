@@ -1,22 +1,26 @@
 import aws from 'aws-sdk';
+import config from '../../aws.config';
 import tables from '../tables';
 
-aws.config.update({
-    region: process.env.AWS_REGION,
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    endpoint: process.env.AWS_DYNAMODB_ENDPOINT,
-});
+aws.config.update(config);
 
 const db = new aws.DynamoDB();
 
 const callback = (err, data) => {
     if (err) {
-        console.error("Unable to create table. Error JSON:", JSON.stringify(err, null, 2));
+        console.error("Unable to create table. Error JSON: ", JSON.stringify(err, null, 2));
     } else {
-        console.log("Created table. Table description JSON:", JSON.stringify(data, null, 2));
+        console.log("Created table.");
     }
 };
 
 tables.forEach(table => db.createTable(table(), callback));
+
+db.listTables((err, data) => {
+    if (err) {
+        console.err('Unable to list tables. ', JSON.stringify(err, null, 2));
+    } else {
+        console.log('Tables created: ', data);
+    }
+});
 

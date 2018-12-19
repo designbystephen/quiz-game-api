@@ -1,63 +1,59 @@
-import { defaultsDeep } from 'lodash/object';
+import aws from 'aws-sdk';
+import config from '../../aws.config';
 
-export const get = async (id) => ({
-    name: 'Fake Name',
-    categories: [],
-    team1: {
-        name: 'Red Team',
-        score: 0
-    },
-    team2: {
-        name: 'Green Team',
-        score: 0
-    },
-    _links: {
-        self: `/games/${id}`,
-        categories: `/games/${id}/categories`
-    }
-});
+aws.config.update(config);
 
-export const getAll = async () => ([
-    { 
-        id: '1234', 
-        name: 'Fake Name',
-        _links: {
-            self: `/games/1234`
-        }
-    }
-]);
+const docClient = new aws.DynamoDB.DocumentClient();
 
-export const create = async (name) => {
-    // id from object creation in database
-    const id = '1234';
+// _links: {
+//     self: `/games/${id}`,
+//     categories: `/games/${id}/categories`
+// }
 
-    // return db get
-    const record = await get(id);
+export const get = async (id) => (
+    docClient.get({
+        TableName: 'Games',
+        Key: { id }
+    }).promise()
+);  
 
-    // TODO: remove
-    record.name = name;
+export const getAll = async () => (
+    docClient.scan({
+        TableName: 'Games',
+        Limit: 50,
+    }).promise()
+);
 
-    return record;
-};
-
-export const update = async (id, {
-    name,
-    team1,
-    team2
-}) => {
-    // TODO: repalce with model.get
-    const original = await get(id);
-
-    return defaultsDeep(
-        {
+export const create = async ({ id, name }) => (
+    docClient.put({
+        TableName: 'Games',
+        Item: {
+            id,
             name,
-            team1,
-            team2,
+            team1: {
+                name: 'Red Team',
+                score: 0
+            },
+            team2: {
+                name: 'Green Team',
+                score: 0
+            }
         },
-        original,
-    );
-};
+    }).promise()
+);
+
+export const update = async (Item) => (
+    docClient.put({
+        TableName: 'Games',
+        Item
+    }).promise()
+);
 
 export const remove = async (id) => (
-    id
+    docClient.delete({
+        TableName: 'Games',
+        Key: {
+            id
+        },
+    }).promise()
 );

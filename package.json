@@ -4,9 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon --exec babel-node ./",
-    "start-db": "docker run -v :/dynamodb_local_db -p 8000:8000 cnadiminti/dynamodb-local:latest",
-    "debug": "nodemon --exec babel-node ./ --inspect",
+    "start": "nodemon --exec babel-node -r node_modules/dotenv/config ./",
+    "start-db": "docker run -v :/dynamodb_local_db -p 8000:8000 amazon/dynamodb-local:latest",
+    "debug": "nodemon --exec babel-node -r node_modules/dotenv/config ./ --inspect",
     "test": "jest",
     "create-tables": "babel-node -r node_modules/dotenv/config src/scripts/create-tables",
     "load-data": "babel-node -r node_modules/dotenv/config src/scripts/load-data"
