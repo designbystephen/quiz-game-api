@@ -1,14 +1,168 @@
 [
     {
-        "id": "0d471c75b9be",
+        "id": "1545266643668",
         "name": "First Game",
-        "team1": {
-            "name": "Red Team",
-            "score": 0
-        },
-        "team2": {
-            "name": "Green Team",
-            "score": 0
-        }
+        "teams": [
+            {
+                "name": "Red Team",
+                "score": 0
+            },
+            {
+                "name": "Green Team",
+                "score": 0
+            }
+        ],
+        "categories": [
+            {
+                "name": "Cat 1",
+                "tiles": [
+                    {
+                        "question": "Question 1",
+                        "answer": "Answer 1",
+                        "active": true
+                    },
+                    {
+                        "question": "Question 2",
+                        "answer": "Answer 2",
+                        "active": true
+                    },
+                    {
+                        "question": "Question 3",
+                        "answer": "Answer 3",
+                        "active": true
+                    },
+                    {
+                        "question": "Question 4",
+                        "answer": "Answer 4",
+                        "active": true
+                    },
+                    {
+                        "question": "Question 5",
+                        "answer": "Answer 5",
+                        "active": true
+                    }
+                ]
+            },
+            {
+                "name": "Cat 2",
+                "tiles": [
+                    {
+                        "question": "Question 1",
+                        "answer": "Answer 1",
+                        "active": true
+                    },
+                    {
+                        "question": "Question 2",
+                        "answer": "Answer 2",
+                        "active": true
+                    },
+                    {
+                        "question": "Question 3",
+                        "answer": "Answer 3",
+                        "active": true
+                    },
+                    {
+                        "question": "Question 4",
+                        "answer": "Answer 4",
+                        "active": true
+                    },
+                    {
+                        "question": "Question 5",
+                        "answer": "Answer 5",
+                        "active": true
+                    }
+                ]
+            },
+            {
+                "name": "Cat 3",
+                "tiles": [
+                    {
+                        "question": "Question 1",
+                        "answer": "Answer 1",
+                        "active": true
+                    },
+                    {
+                        "question": "Question 2",
+                        "answer": "Answer 2",
+                        "active": true
+                    },
+                    {
+                        "question": "Question 3",
+                        "answer": "Answer 3",
+                        "active": true
+                    },
+                    {
+                        "question": "Question 4",
+                        "answer": "Answer 4",
+                        "active": true
+                    },
+                    {
+                        "question": "Question 5",
+                        "answer": "Answer 5",
+                        "active": true
+                    }
+                ]
+            },
+            {
+                "name": "Cat 4",
+                "tiles": [
+                    {
+                        "question": "Question 1",
+                        "answer": "Answer 1",
+                        "active": true
+                    },
+                    {
+                        "question": "Question 2",
+                        "answer": "Answer 2",
+                        "active": true
+                    },
+                    {
+                        "question": "Question 3",
+                        "answer": "Answer 3",
+                        "active": true
+                    },
+                    {
+                        "question": "Question 4",
+                        "answer": "Answer 4",
+                        "active": true
+                    },
+                    {
+                        "question": "Question 5",
+                        "answer": "Answer 5",
+                        "active": true
+                    }
+                ]
+            },
+            {
+                "name": "Cat 5",
+                "tiles": [
+                    {
+                        "question": "Question 1",
+                        "answer": "Answer 1",
+                        "active": true
+                    },
+                    {
+                        "question": "Question 2",
+                        "answer": "Answer 2",
+                        "active": true
+                    },
+                    {
+                        "question": "Question 3",
+                        "answer": "Answer 3",
+                        "active": true
+                    },
+                    {
+                        "question": "Question 4",
+                        "answer": "Answer 4",
+                        "active": true
+                    },
+                    {
+                        "question": "Question 5",
+                        "answer": "Answer 5",
+                        "active": true
+                    }
+                ]
+            }
+        ]
     }
 ]

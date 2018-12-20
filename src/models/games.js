@@ -30,14 +30,17 @@ export const create = async ({ id, name }) => (
         Item: {
             id,
             name,
-            team1: {
-                name: 'Red Team',
-                score: 0
-            },
-            team2: {
-                name: 'Green Team',
-                score: 0
-            }
+            teams: [
+                { name: 'Red Team', score: 0 },
+                { name: 'Green Team', score: 0 },
+            ],
+            categories: [
+                { name: 'Category 1', tiles: [] },
+                { name: 'Category 2', tiles: [] },
+                { name: 'Category 3', tiles: [] },
+                { name: 'Category 4', tiles: [] },
+                { name: 'Category 5', tiles: [] },
+            ]
         },
     }).promise()
 );
